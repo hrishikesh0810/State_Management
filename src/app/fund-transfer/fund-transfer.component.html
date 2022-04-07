@@ -1,0 +1,42 @@
+<html>
+  <body>
+    <div>
+      <h1><i>U Bank Fund Transfer Form</i></h1>
+    </div>
+      <form [formGroup]="fundTransfer">
+        <div class="row">
+          <div >
+            <label class="label">Customer Name : </label>
+            <input type="text" class="form-control" formControlName="customerName" name="customerName" id="customerName" value="{{dynamicArray.customerName}}"><br>
+          </div>
+
+        <label class="label">{{dynamicArray.prop_FromAccount.labelName}} : </label>
+        <input type="text" class="form-control" formControlName="fromAccount" name="fromAccount" id="fromAccount" value="{{dynamicArray.fromAccount}}" [disabled]="isDisabled" required="{{dynamicArray.prop_FromAccount.isMandatory}}">
+
+        <label class="label">To Account : </label>
+        <input type="text" class="form-control" formControlName="toAccount" name="toAccount" id="toAccount" value="{{dynamicArray.toAccount}}"><br>
+
+        <label class="label">Amount : </label>
+        <input type="text" class="form-control" formControlName="amount" name="amount" id="amount" value="{{dynamicArray.amount}}"><br>
+
+        <label class="label">Description : </label>
+        <input type="text" class="form-control" formControlName="description" name="description" id="description" value="{{dynamicArray.description}}">
+      </div>
+      <button name="process" (click)="showFundTransferData()">Process</button>
+    </form>
+    <h3>{{showData}}</h3>
+  </body>
+</html>
+
+<!--
+<div class="row">
+  <div class="col-md-12" *ngFor="let control of dynamicArray">
+    <div class="col-md-4">
+      <label class="label">{{control.label}} : </label>
+    </div>
+    <div class="col-md-6">
+      <input type="text" class="form-control">
+    </div>
+  </div>
+</div>
+<input type="button" name="process" value="Process" onclick="onProcess()"> -->

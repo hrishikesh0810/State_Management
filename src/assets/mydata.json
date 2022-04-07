@@ -1,0 +1,47 @@
+{
+  "data": {
+    "CustomerName":"James Bond",
+    "FromAccount": "100",
+    "ToAccount": "200",
+    "Amount": 200.00,
+    "Description": "Fund Transfer"
+  },
+  "properties": {
+    "FromAccount": {
+      "isEditable": true,
+      "isVisiable": true,
+      "labelName": "From Account",
+      "isMandatory": true
+    },
+    "ToAccount": {
+      "fieldName": "ToAccount",
+      "isEditable": true,
+      "isVisiable": true,
+      "labelName": "To Account",
+      "isMandatory": true
+    },
+    "Amount": {
+      "fieldName": "Amount",
+      "isEditable": true,
+      "isVisiable": true,
+      "labelName": "Amount",
+      "isMandatory": true
+    },
+    "Description": {
+      "fieldName": "Description",
+      "isEditable": true,
+      "isVisiable": true,
+      "labelName": "Description",
+      "isMandatory": true
+    }
+  },
+  "actions": [
+    {
+      "name": "Approve"
+    },
+    {
+      "name": "Reject"
+    }
+  ]
+}
+

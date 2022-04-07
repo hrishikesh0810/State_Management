@@ -1,0 +1,16 @@
+.label{
+  font-size: large;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight:bolder;
+  /* width: 300px; */
+}
+body{
+  /* text-align: center; */
+}
+row::after{
+  content: "";
+  display: inline-block;
+  clear: both;
+  /* border: 1px solid; */
+
+}
