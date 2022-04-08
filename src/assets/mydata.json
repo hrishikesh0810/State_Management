@@ -1,38 +1,42 @@
 {
   "data": {
-    "CustomerName":"James Bond",
-    "FromAccount": "100",
-    "ToAccount": "200",
+    "FromAccount": "1",
+    "ToAccount": "2",
     "Amount": 200.00,
     "Description": "Fund Transfer"
   },
   "properties": {
     "FromAccount": {
+      "fieldName": "FromAccount",
       "isEditable": true,
-      "isVisiable": true,
+      "isVisible": true,
       "labelName": "From Account",
-      "isMandatory": true
+      "isMandatory": true,
+      "type":"text"
     },
     "ToAccount": {
       "fieldName": "ToAccount",
-      "isEditable": true,
-      "isVisiable": true,
+      "isEditable": false,
+      "isVisible": true,
       "labelName": "To Account",
-      "isMandatory": true
+      "isMandatory": true,
+      "type":"text"
     },
     "Amount": {
       "fieldName": "Amount",
       "isEditable": true,
-      "isVisiable": true,
+      "isVisible": true,
       "labelName": "Amount",
-      "isMandatory": true
+      "isMandatory": true,
+      "type":"text"
     },
     "Description": {
       "fieldName": "Description",
       "isEditable": true,
-      "isVisiable": true,
+      "isVisible": true,
       "labelName": "Description",
-      "isMandatory": true
+      "isMandatory": true,
+      "type":"text"
     }
   },
   "actions": [
@@ -44,4 +48,3 @@
     }
   ]
 }
-

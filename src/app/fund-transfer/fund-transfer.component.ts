@@ -10,9 +10,11 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 export class FundTransferComponent implements OnInit {
 
   fundTransfer!: FormGroup;
-  isVisible = true;
-  isDisabled!: boolean;
+  isVisible = false;
+  isDisabled: boolean =false;
   customerNameNew: any;
+  fundTransferRes : any;
+  fieldKey : string = '';
   public dynamicArray = {
     customerName : '',
     fromAccount : '',
@@ -20,62 +22,64 @@ export class FundTransferComponent implements OnInit {
     amount : '',
     description:'',
     prop_FromAccount:{
-      isEditable : true,
+      isEditable : false,
       isVisiable : false,
       labelName : '',
       isMandatory : false
-    }
-    // prop_ToAccount:{},
+    },
+    // prop_ToAccount:{
+    //   isEditable : false,
+    //   isVisiable : false,
+    //   labelName : '',
+    //   isMandatory : false
+    // },
     // prop_Amount:{},
     // prop_Description:{}
   };
   showData: any;
+  fromAccount: any;
   constructor(private httpClient: HttpClient,private formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
     this.getFundData();
     this.fundTransfer = this.formBuilder.group({
-      customerName : {value:'',disabled:this.isDisabled},
+      customerName : {},
       fromAccount : {},
       toAccount : {},
       amount : {},
       description: {}
     })
-
-    console.log("***102",this.isDisabled);
   }
 
   getFundData(){
     this.httpClient.get('/assets/mydata.json').subscribe((res:any)=>{
-      console.log("***100",res.properties.FromAccount);
-      this.dynamicArray={
-          customerName : res.data.CustomerName,
-          fromAccount : res.data.FromAccount,
-          toAccount : res.data.ToAccount,
-          amount : res.data.Amount,
-          description : res.data.Description,
-          prop_FromAccount :{
-              isEditable : res.properties.FromAccount.isEditable,
-              isVisiable : res.properties.FromAccount.isVisiable,
-              labelName : res.properties.FromAccount.labelName,
-              isMandatory : res.properties.FromAccount.isMandatory
-          }
-      }
-      this.isDisabled = this.dynamicArray.prop_FromAccount.isEditable;
-
-     console.log("***101",this.isDisabled);
+      console.log("***100",res);
+      this.fundTransferRes = res;
+      console.log("***200",this.fundTransferRes.data.FromAccount);
+      this.customerNameNew = this.fundTransferRes.data.FromAccount;
+      console.log("***201",this.customerNameNew);
+      // this.showFundTransferData();
     });
   }
 
   showFundTransferData(){
-        this.showData = this.dynamicArray.customerName +' '+ this.dynamicArray.amount;
+
+    var arrData = this.fundTransferRes.properties;
+    for(var i=0; i<arrData.length;i++){
+      var arr = this.fundTransferRes.properties[i];
+      this.fieldKey = arr.fieldKey;
+
+      if(!arr.isEditable){
+        this.fundTransfer.controls[arr.fieldKey].disable();
+      }
+    }
+      this.showData = this.fundTransferRes.data.FromAccount;
   }
-   // setFundTransferData(){
-  //   this.fundTransfer.setValue({
-  //     customerName : 'Harry',
-  //     fromAccount : '1',
-  //     toAccount : '2',
-  //     amount : '555'
-  //   })
-  // }
+
+  disableData(){
+    this.isVisible = true;
+  }
+  enableData(){
+    this.isVisible = false;
+  }
 }
