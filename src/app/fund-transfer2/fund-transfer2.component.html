@@ -1,0 +1,49 @@
+<html>
+  <body>
+    <div>
+      <h1><i>U Bank Fund Transfer Form</i></h1>
+    </div>
+      <form #fundTransferForm="ngForm" (ngSubmit)="onSubmit(fundTransferForm)">
+        <div class="fundForm">
+          <div class="row" [hidden]=!fundTransferRes.properties.FromAccount.isVisible>
+            <div class="col-25" >
+              <label class="label">{{fundTransferRes.properties.FromAccount.labelName}} : </label>
+            </div>
+            <div class="col-75">
+              <input type="text" class="form-control" name="fromAccount" id="fromAccount" value="{{fundTransferRes.data.FromAccount}}"
+              [disabled]=fundTransferRes.properties.FromAccount.isEditable ng-required="true">
+            </div>
+          </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">To Account : </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="toAccount" id="toAccount" value="{{fundTransferRes.data.ToAccount}}"
+              [disabled]=fundTransferRes.properties.ToAccount.isEditable><br>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">Amount : </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="amount" id="amount" value="{{fundTransferRes.data.Amount}}"
+              [disabled]=fundTransferRes.properties.Amount.isEditable><br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">Description 1: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.Description}}"
+              [disabled]=fundTransferRes.properties.Description.isEditable>
+          </div>
+        </div>
+ </div>
+ <button type="submit" >Process</button>
+ </form>
+ </body>
+ </html>

@@ -1,0 +1,70 @@
+<html>
+  <body>
+    <div>
+      <h1><i>Process Fund Transfer Form</i></h1>
+    </div>
+      <form [formGroup]="processFund" >
+        <div class="fundForm">
+          <div class="row">
+            <div class="col-25" >
+              <label class="label">{{fundTransferRes.data.properties.FromAccount.labelName}} : </label>
+            </div>
+            <div class="col-75">
+              <input type="text" class="form-control" formControlName="fromAccount" [(ngModel)]="fundTransferRes.data.data.FromAccount">
+            </div>
+          </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">{{fundTransferRes.data.properties.ToAccount.labelName}} : </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" formControlName="toAccount" [(ngModel)]="fundTransferRes.data.data.ToAccount"><br>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">{{fundTransferRes.data.properties.Amount.labelName}} : </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" formControlName="amount" [(ngModel)]="fundTransferRes.data.data.Amount"><br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">{{fundTransferRes.data.properties.Description.labelName}} : </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" formControlName="description" [(ngModel)]="fundTransferRes.data.data.Description">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">{{fundTransferRes.data.properties.Description1.labelName}} : </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" formControlName="description1" [(ngModel)]="fundTransferRes.data.data.Description1">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">{{fundTransferRes.data.properties.Description2.labelName}} : </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" formControlName="description2" [(ngModel)]="fundTransferRes.data.data.Description2">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">{{fundTransferRes.data.properties.Description3.labelName}} : </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" formControlName="description3" [(ngModel)]="fundTransferRes.data.data.Description3">
+          </div>
+        </div>
+ </div>
+ <input type="submit" value="Submit">
+ <input type="button" (click)="BackPage('fund')" value="Back">
+ </form>
+ </body>
+ </html>

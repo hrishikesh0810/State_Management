@@ -1,0 +1,47 @@
+<html>
+  <body>
+    <div>
+      <h1><i>Fund Transfer Form</i></h1>
+    </div>
+      <form [formGroup]="fundTransfer">
+        <div class="fundForm">
+          <div class="row">
+            <div class="col-25" >
+              <label class="label">{{fundTransferRes.data.properties.FromAccount.labelName}} : </label>
+            </div>
+            <div class="col-75">
+              <input type="text" class="form-control" formControlName="fromAccount" [(ngModel)]="fundTransferRes.data.data.FromAccount">
+            </div>
+          </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">{{fundTransferRes.data.properties.ToAccount.labelName}} : </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" formControlName="toAccount" [(ngModel)]="fundTransferRes.data.data.ToAccount"><br>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">{{fundTransferRes.data.properties.Amount.labelName}} : </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" formControlName="amount" [(ngModel)]="fundTransferRes.data.data.Amount"><br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">{{fundTransferRes.data.properties.Description.labelName}} : </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" formControlName="description" [(ngModel)]="fundTransferRes.data.data.Description">
+          </div>
+        </div>
+ </div>
+ <input type="button" (click)="SendData('/process')" value="Submit">
+ </form>
+
+ </body>
+ <!-- <router-outlet></router-outlet> -->
+ </html>

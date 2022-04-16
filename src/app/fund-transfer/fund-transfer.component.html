@@ -3,29 +3,800 @@
     <div>
       <h1><i>U Bank Fund Transfer Form</i></h1>
     </div>
-      <form name="fundTransfer">
+      <form>
+        <div (Submit)="onSubmit($event)">
+          <div class="row">
+            <div class="col-25" >
+              <label class="label">From Account : </label>
+            </div>
+            <div class="col-75">
+              <input type="text" class="form-control" name="fromAccount" id="fromAccount" value="{{fundTransferRes.data.data.FromAccount}}"
+               [disabled]=fundTransferRes.data.properties.FromAccount.isEditable ng-required="true">
+            </div>
+          </div>
         <div class="row">
-          <div class="col" [hidden]=fundTransferRes.properties.FromAccount.isVisible>
-            <label class="label">{{fundTransferRes.properties.FromAccount.labelName}} {{fundTransferRes.properties.FromAccount.isVisible}}: </label>
-            <input type="text" class="form-control"  name="fromAccount" id="fromAccount" value="{{fundTransferRes.data.FromAccount}}"
-               [disabled]=fundTransferRes.properties.FromAccount.isEditable ng-required="true">
+          <div class="col-25">
+            <label class="label">To Account : </label>
           </div>
-          <div class="col">
-            <label class="label">{{fundTransferRes.properties.ToAccount.labelName}} : </label>
-            <input type="text" class="form-control" name="toAccount" id="toAccount" value="{{fundTransferRes.data.ToAccount}}" [disabled]=fundTransferRes.properties.ToAccount.isEditable><br>
+          <div class="col-75">
+            <input type="text" class="form-control" name="toAccount" id="toAccount" value="{{fundTransferRes.data.data.ToAccount}}"
+              [disabled]=fundTransferRes.data.properties.ToAccount.isEditable><br>
           </div>
-          <div class="col">
-            <label class="label">{{fundTransferRes.properties.Amount.labelName}} : </label>
-            <input type="text" class="form-control" name="amount" id="amount" value="{{fundTransferRes.data.Amount}}" [disabled]=fundTransferRes.properties.Amount.isEditable><br>
+
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">Amount : </label>
           </div>
-          <div class="col">
-            <label class="label">{{fundTransferRes.properties.Description.labelName}} : </label>
-            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.Description}}" [disabled]=fundTransferRes.properties.Description.isEditable>
+          <div class="col-75">
+            <input type="text" class="form-control" name="amount" id="amount" value="{{fundTransferRes.data.data.Amount}}"
+              [disabled]=fundTransferRes.data.properties.Amount.isEditable><br>
           </div>
         </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">Description 1: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description1}}"
+              [disabled]=fundTransferRes.data.properties.Description1.isEditable>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">Description 2: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description2}}"
+              [disabled]=fundTransferRes.data.properties.Description2.isEditable>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">Description 3: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description3}}"
+              [disabled]=fundTransferRes.data.properties.Description3.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 4: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description4}}"
+              [disabled]=fundTransferRes.data.properties.Description4.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 5: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description5}}"
+              [disabled]=fundTransferRes.data.properties.Description5.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 6: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description6}}"
+              [disabled]=fundTransferRes.data.properties.Description6.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 7: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description7}}"
+              [disabled]=fundTransferRes.data.properties.Description7.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 8: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description8}}"
+              [disabled]=fundTransferRes.data.properties.Description8.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 9: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description9}}"
+              [disabled]=fundTransferRes.data.properties.Description9.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 10: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description10}}"
+              [disabled]=fundTransferRes.data.properties.Description10.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 11: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description11}}"
+              [disabled]=fundTransferRes.data.properties.Description11.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 12: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description12}}"
+              [disabled]=fundTransferRes.data.properties.Description12.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 13: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description13}}"
+              [disabled]=fundTransferRes.data.properties.Description13.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 14: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description14}}"
+              [disabled]=fundTransferRes.data.properties.Description14.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 15: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description15}}"
+              [disabled]=fundTransferRes.data.properties.Description15.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 16: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description16}}"
+              [disabled]=fundTransferRes.data.properties.Description16.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 17: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description17}}"
+              [disabled]=fundTransferRes.data.properties.Description17.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 18: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description18}}"
+              [disabled]=fundTransferRes.data.properties.Description18.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 19: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description19}}"
+              [disabled]=fundTransferRes.data.properties.Description19.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 20: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description20}}"
+              [disabled]=fundTransferRes.data.properties.Description20.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 21: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description21}}"
+              [disabled]=fundTransferRes.data.properties.Description21.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 22: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description22}}"
+              [disabled]=fundTransferRes.data.properties.Description22.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 23: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description23}}"
+              [disabled]=fundTransferRes.data.properties.Description23.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 24: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description24}}"
+              [disabled]=fundTransferRes.data.properties.Description24.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 25: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description25}}"
+              [disabled]=fundTransferRes.data.properties.Description25.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 26: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description26}}"
+              [disabled]=fundTransferRes.data.properties.Description26.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 27: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description27}}"
+              [disabled]=fundTransferRes.data.properties.Description27.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 28: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description28}}"
+              [disabled]=fundTransferRes.data.properties.Description28.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 29: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description29}}"
+              [disabled]=fundTransferRes.data.properties.Description29.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 30: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description30}}"
+              [disabled]=fundTransferRes.data.properties.Description30.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 31: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description31}}"
+              [disabled]=fundTransferRes.data.properties.Description31.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 32: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description32}}"
+              [disabled]=fundTransferRes.data.properties.Description32.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 33: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description33}}"
+              [disabled]=fundTransferRes.data.properties.Description33.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 34: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description34}}"
+              [disabled]=fundTransferRes.data.properties.Description34.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 35: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description35}}"
+              [disabled]=fundTransferRes.data.properties.Description35.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 36: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description36}}"
+              [disabled]=fundTransferRes.data.properties.Description36.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 37: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description37}}"
+              [disabled]=fundTransferRes.data.properties.Description37.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 38: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description38}}"
+              [disabled]=fundTransferRes.data.properties.Description38.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 39: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description39}}"
+              [disabled]=fundTransferRes.data.properties.Description39.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 40: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description40}}"
+              [disabled]=fundTransferRes.data.properties.Description40.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 41: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description41}}"
+              [disabled]=fundTransferRes.data.properties.Description41.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 42: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description42}}"
+              [disabled]=fundTransferRes.data.properties.Description42.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 43: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description43}}"
+              [disabled]=fundTransferRes.data.properties.Description43.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 44: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description44}}"
+              [disabled]=fundTransferRes.data.properties.Description44.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 45: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description45}}"
+              [disabled]=fundTransferRes.data.properties.Description45.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 46: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description46}}"
+              [disabled]=fundTransferRes.data.properties.Description46.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 47: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description48}}"
+              [disabled]=fundTransferRes.data.properties.Description47.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 48: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description48}}"
+              [disabled]=fundTransferRes.data.properties.Description48.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 49: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description49}}"
+              [disabled]=fundTransferRes.data.properties.Description49.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 50: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description50}}"
+              [disabled]=fundTransferRes.data.properties.Description50.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 51: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description51}}"
+              [disabled]=fundTransferRes.data.properties.Description51.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description :52 </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description52}}"
+              [disabled]=fundTransferRes.data.properties.Description52.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 53: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description53}}"
+              [disabled]=fundTransferRes.data.properties.Description53.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 54: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description54}}"
+              [disabled]=fundTransferRes.data.properties.Description54.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 55: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description55}}"
+              [disabled]=fundTransferRes.data.properties.Description55.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 56: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description56}}"
+              [disabled]=fundTransferRes.data.properties.Description56.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 57: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description57}}"
+              [disabled]=fundTransferRes.data.properties.Description57.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 58: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description58}}"
+              [disabled]=fundTransferRes.data.properties.Description58.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 59: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description59}}"
+              [disabled]=fundTransferRes.data.properties.Description59.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 60: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description60}}"
+              [disabled]=fundTransferRes.data.properties.Description60.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 61: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description61}}"
+              [disabled]=fundTransferRes.data.properties.Description61.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 62: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description62}}"
+              [disabled]=fundTransferRes.data.properties.Description62.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 63: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description63}}"
+              [disabled]=fundTransferRes.data.properties.Description63.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 64: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description64}}"
+              [disabled]=fundTransferRes.data.properties.Description64.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 65: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description65}}"
+              [disabled]=fundTransferRes.data.properties.Description65.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 66: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description66}}"
+              [disabled]=fundTransferRes.data.properties.Description66.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 67: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description67}}"
+              [disabled]=fundTransferRes.data.properties.Description67.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 68: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description68}}"
+              [disabled]=fundTransferRes.data.properties.Description68.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 69: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description69}}"
+              [disabled]=fundTransferRes.data.properties.Description69.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 70: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description70}}"
+              [disabled]=fundTransferRes.data.properties.Description70.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 71: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description71}}"
+              [disabled]=fundTransferRes.data.properties.Description71.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 72: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description72}}"
+              [disabled]=fundTransferRes.data.properties.Description72.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 73: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description73}}"
+              [disabled]=fundTransferRes.data.properties.Description73.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 74: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description74}}"
+              [disabled]=fundTransferRes.data.properties.Description74.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 75: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description75}}"
+              [disabled]=fundTransferRes.data.properties.Description75.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 76: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description76}}"
+              [disabled]=fundTransferRes.data.properties.Description76.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 77: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description77}}"
+              [disabled]=fundTransferRes.data.properties.Description77.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 78: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description78}}"
+              [disabled]=fundTransferRes.data.properties.Description78.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 79: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description79}}"
+              [disabled]=fundTransferRes.data.properties.Description79.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 80: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description80}}"
+              [disabled]=fundTransferRes.data.properties.Description80.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 81: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description81}}"
+              [disabled]=fundTransferRes.data.properties.Description81.isEditable>
+          </div>
+        </div><div class="row">
+          <div class="col-25">
+            <label class="label">Description 82: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description82}}"
+              [disabled]=fundTransferRes.data.properties.Description82.isEditable>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">Description 83: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description83}}"
+              [disabled]=fundTransferRes.data.properties.Description83.isEditable>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">Description 84: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description84}}"
+              [disabled]=fundTransferRes.data.properties.Description84.isEditable>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">Description 85: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description85}}"
+              [disabled]=fundTransferRes.data.properties.Description85.isEditable>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">Description 86: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description86}}"
+              [disabled]=fundTransferRes.data.properties.Description86.isEditable>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">Description 87: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description87}}"
+              [disabled]=fundTransferRes.data.properties.Description87.isEditable>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">Description 88: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description88}}"
+              [disabled]=fundTransferRes.data.properties.Description88.isEditable>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">Description 89: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description89}}"
+              [disabled]=fundTransferRes.data.properties.Description89.isEditable>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">Description 90: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description90}}"
+              [disabled]=fundTransferRes.data.properties.Description90.isEditable>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">Description 91: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description91}}"
+              [disabled]=fundTransferRes.data.properties.Description91.isEditable>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">Description 92: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description92}}"
+              [disabled]=fundTransferRes.data.properties.Description92.isEditable>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label class="label">Description 93: </label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" name="description" id="description" value="{{fundTransferRes.data.data.Description93}}"
+              [disabled]=fundTransferRes.data.properties.Description93.isEditable>
+          </div>
+        </div>
+      </div>
+      <input type="submit" value="Process">
+      <!-- <button name="showData" (click)="showFundTransferData()">Show Data</button> -->
     </form>
-    <button name="disable" (click)="disableData()">Disable</button>
-    <button name="enable" (click)="enableData()">Enable</button>
+
+    <!-- <button name="enable" (click)="enableData()">Enable</button> -->
     <h3>{{showData}}</h3>
   </body>
 </html>

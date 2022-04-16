@@ -1,0 +1,46 @@
+{
+  "data": {
+    "FromAccount": "1",
+    "ToAccount": "2",
+    "Amount": 200.00,
+    "Description": "Fund Transfer"
+  },
+  "properties": [
+    {
+      "fieldKey": "FromAccount",
+      "isEditable": true,
+      "isVisiable": true,
+      "labelName": "From Account",
+      "isMandatory": true
+    },
+    {
+      "fieldKey": "ToAccount",
+      "isEditable": true,
+      "isVisiable": true,
+      "labelName": "To Account",
+      "isMandatory": true
+    },
+    {
+      "fieldKey": "Amount",
+      "isEditable": true,
+      "isVisiable": true,
+      "labelName": "Amount",
+      "isMandatory": true
+    },
+    {
+      "fieldKey": "Description",
+      "isEditable": true,
+      "isVisiable": true,
+      "labelName": "Description",
+      "isMandatory": true
+    }
+  ],
+  "actions": [
+    {
+      "name": "Approve"
+    },
+    {
+      "name": "Reject"
+    }
+  ]
+}
