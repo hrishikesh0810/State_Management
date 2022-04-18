@@ -35,13 +35,10 @@ export class FundTransferState{
 
   @Action(GetFundTransfer)
   getFundTransfer({getState,setState} : StateContext<FundTransferStateModal>){
-    console.log("***5 Action State.....")
 
    return this.fundService.getFundTransferData().pipe(tap(res =>{
-    console.log("***6",res);
 
     const state = getState();
-    console.log("***8" ,state);
     setState({
       ...state,
       fundTransferModal : res,

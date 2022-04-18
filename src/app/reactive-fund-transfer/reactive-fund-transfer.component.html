@@ -5,24 +5,28 @@
     </div>
       <form [formGroup]="fundTransfer">
         <div class="fundForm">
-          <div class="row">
+          <fieldset [disabled]="fundTransferRes.data.properties.FromAccount.isEditable">
+          <div class="row" [hidden]="!fundTransferRes.data.properties.FromAccount.isVisiable">
             <div class="col-25" >
               <label class="label">{{fundTransferRes.data.properties.FromAccount.labelName}} : </label>
             </div>
             <div class="col-75">
-              <input type="text" class="form-control" formControlName="fromAccount" [(ngModel)]="fundTransferRes.data.data.FromAccount">
+              <input type="text" class="form-control" formControlName="fromAccount" [disabled]="true" [(ngModel)]="fundTransferRes.data.data.FromAccount">
             </div>
           </div>
-        <div class="row">
+        </fieldset>
+        <fieldset [disabled]="fundTransferRes.data.properties.ToAccount.isEditable">
+        <div class="row" [hidden]="!fundTransferRes.data.properties.ToAccount.isVisiable">
           <div class="col-25">
             <label class="label">{{fundTransferRes.data.properties.ToAccount.labelName}} : </label>
           </div>
           <div class="col-75">
             <input type="text" class="form-control" formControlName="toAccount" [(ngModel)]="fundTransferRes.data.data.ToAccount"><br>
           </div>
-
-        </div>
-        <div class="row">
+          </div>
+        </fieldset>
+        <fieldset [disabled]="fundTransferRes.data.properties.Amount.isEditable">
+        <div class="row" [hidden]="!fundTransferRes.data.properties.Amount.isVisiable">
           <div class="col-25">
             <label class="label">{{fundTransferRes.data.properties.Amount.labelName}} : </label>
           </div>
@@ -30,7 +34,9 @@
             <input type="text" class="form-control" formControlName="amount" [(ngModel)]="fundTransferRes.data.data.Amount"><br>
           </div>
         </div>
-        <div class="row">
+        </fieldset>
+        <fieldset [disabled]="fundTransferRes.data.properties.Description.isEditable">
+        <div class="row" [hidden]="!fundTransferRes.data.properties.Description.isVisiable">
           <div class="col-25">
             <label class="label">{{fundTransferRes.data.properties.Description.labelName}} : </label>
           </div>
@@ -38,6 +44,7 @@
             <input type="text" class="form-control" formControlName="description" [(ngModel)]="fundTransferRes.data.data.Description">
           </div>
         </div>
+        </fieldset>
  </div>
  <input type="button" (click)="SendData('/process')" value="Submit">
  </form>

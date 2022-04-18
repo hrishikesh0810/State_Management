@@ -35,3 +35,9 @@ input[type=text] {
   width: 50%;
   margin-top: 6px;
 }
+fieldset {
+  display: block;
+  margin: unset;
+  padding: unset;
+  border: unset;
+}

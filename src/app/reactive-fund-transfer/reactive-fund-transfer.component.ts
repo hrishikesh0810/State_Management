@@ -3,7 +3,7 @@ import { Observable, Subscription } from 'rxjs';
 import { FundTransferState } from './../store/state/fundTransfer.state';
 import { GetFundTransfer } from './../store/actions/fundTransfer.action';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, NgForm, FormGroup } from '@angular/forms';
 import { Select, Store } from '@ngxs/store';
 import { FundTransferServiceService } from 'src/fund-transfer-service.service';
 import { Router } from '@angular/router';
@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./reactive-fund-transfer.component.css']
 })
 export class ReactiveFundTransferComponent implements OnInit,OnDestroy {
-  fundTransfer: any;
+  fundTransfer!: FormGroup;
 
   constructor(private fundService: FundTransferServiceService,
     private formBuilder:FormBuilder,private store:Store,private router:Router) { }
@@ -25,6 +25,10 @@ export class ReactiveFundTransferComponent implements OnInit,OnDestroy {
 
   fundTransferSub!: Subscription;
   fundTransferRes : any;
+  isDisabledFromAccount!: boolean;
+  isDisabledToAccount!: boolean;
+  isDisabledAmount!: boolean;
+  isDisabledDescription!: boolean;
   ngOnInit(): void {
     this.getFundData();
     // this.setData();
@@ -37,7 +41,6 @@ export class ReactiveFundTransferComponent implements OnInit,OnDestroy {
     })
   }
 
-
   getFundData(){
 
     this.fundTransferSub = this.fundTransferLoaded$.subscribe(res =>{
@@ -49,33 +52,17 @@ export class ReactiveFundTransferComponent implements OnInit,OnDestroy {
     this.getFundData$.subscribe(res =>{
       console.log("***333",res);
       this.fundTransferRes = res;
-      console.log("***334",this.fundTransferRes.data.data.Amount);
+      console.log("***334",this.fundTransferRes);
     });
-    // this.fundService.getFundTransferData().subscribe(res=>{
-    //    console.log("***100",res);
-    //    this.fundTransferRes = res;
-    //    if(this.fundTransferRes === undefined){
-    //      return;
-    //    }
 
-    //  });
    }
 
    SendData(pageName: string):void{
-
       this.router.navigate([`${pageName}`]);
-    //  console.log("***300",fundTransfer.value);
-    //  console.log("***301",fundTransfer.value.fromAccount);
-    //  this.fundService.createFundTransfer(fundTransfer.value).subscribe(() =>{
-    //   this.fundService.alertMessage("Record has been submitted successfully");
-    //  });
   }
 
    ngOnDestroy(){
     this.fundTransferSub.unsubscribe();
   }
 
-  // disableFields(){
-  //   this.
-  // }
 }
